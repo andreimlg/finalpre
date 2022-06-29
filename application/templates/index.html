@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class= "site-header-logo">
+    <h1 class = "text-center">
+        Fraud Analysis
+    </h1> 
+</div>
+
+<div class= "row p-4">
+    <div class = "card m-auto" style = "width: 90%;">
+        <div class=" card-body">
+             <div id= "fig3"></div>
+             <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+             </p>
+        </div>
+    </div>  
+</div>
+
+<!-- plotly CDN-->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+    var graphs= {{graphJSON3 | safe}};
+    Plotly.plot("fig3", graphs, {})
+</script>
+{% endblock %}
